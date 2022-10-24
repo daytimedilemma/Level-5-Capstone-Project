@@ -66,6 +66,30 @@
 # Create Pull request on git hub'
 
 # Git Checkout to master and git pull
+
+
+-Front 
+
+** Few adjustments for backend
+- summer break(Nick)
+
+- React Client (Cecilia)
+- Forms for all fall , winter, spring, summer breaks(Nick)
+- Have a calander generated and displayed(Natalie)
+- Introduction home page (Cecilia) 
+- Routes(Cecilia)
+
+CRUD Routes
+3 routes
+home 
+custodial 
+noncustodial 
+
+css - Natalie 
+
+
+
+
     
 
 
