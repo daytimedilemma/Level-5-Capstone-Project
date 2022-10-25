@@ -91,7 +91,16 @@ before starting always do a git pull origin master
 
 commit to your branch and not the master
 
+# 1. Start backend 
 
+- cd Level-5-Capstone-Project
+- nodemon index.js
+
+# 2. Start frontend
+
+- Open another terminal window
+- cd Level-5-Capstone-Project/client
+- npm start
 
 
     
