@@ -87,7 +87,16 @@ noncustodial
 
 css - Natalie 
 
+# 1. Start backend 
 
+- cd Level-5-Capstone-Project
+- nodemon index.js
+
+# 2. Start frontend
+
+- Open another terminal window
+- cd Level-5-Capstone-Project/client
+- npm start
 
 
     
