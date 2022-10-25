@@ -87,6 +87,10 @@ noncustodial
 
 css - Natalie 
 
+before starting always do a git pull origin master
+
+commit to your branch and not the master
+
 # 1. Start backend 
 
 - cd Level-5-Capstone-Project

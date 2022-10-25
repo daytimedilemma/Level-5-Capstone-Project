@@ -144,58 +144,35 @@ const custodialParentSchema = new Schema({
             type: String,
             required: true
         },
-        schoolTime: {
-            beginningTime: {
-                type: Number,
-                required: true
-            },
-            endingTime: {
-                type: Number,
-                required: true
-            }
+        beginningSchoolTime: {
+          type: String,
+          required: true
         },
-        dayOfChildsBirthday: {
-            month: {
-                type: String,
-                enum: months,
-                required: true
-            },
-            day: Number
+        endingSchoolTime: {
+            type: String,
+            required: true
+          },
+        birthday: {
+            type: String,
+            required: true
         }
 
     },
 
     winterBreakFirstHalf: {
-        month: {
+        startDate: {
             type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
             required: true
         },
         endDate: {
-            type: Number,
+            type: String,
             required: true
         }
     },
 
     winterBreakSecondHalf: {
-        startMonth: {
+        startDate: {
             type: String,
-            enum: months,
-            required: true
-        },
-        endMonth: {
-            type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
             required: true
         },
         endDate: {
@@ -205,35 +182,23 @@ const custodialParentSchema = new Schema({
     },
 
     fallBreak: {
-        month: {
+        startDate: {
             type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
             required: true
         },
         endDate: {
-            type: Number,
+            type: String,
             required: true
         }
     },
 
     springBreak: {
-        month: {
+        startDate: {
             type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
             required: true
         },
         endDate: {
-            type: Number,
+            type: String,
             required: true
         }
     }
