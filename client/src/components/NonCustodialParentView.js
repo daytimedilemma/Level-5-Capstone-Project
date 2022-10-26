@@ -1,5 +1,6 @@
 import React from "react"
 import ChildForm from "./ChildForm"
+import SeasonalBreakInputs from "./seasonBreakInputs/SeasonalBreaksInput"
 
 function NonCustodialParentView() {
     return (
@@ -7,6 +8,7 @@ function NonCustodialParentView() {
             <h1>Non Custodial Parent View</h1>
             <form>
                 <ChildForm />
+                <SeasonalBreakInputs/>
             </form>
         </>
     )
