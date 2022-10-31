@@ -78,6 +78,7 @@
 - Have a calander generated and displayed(Natalie)
 - Introduction home page (Cecilia) 
 - Routes(Cecilia)
+- Cecilia Delete and edit buttons
 
 CRUD Routes
 3 routes
@@ -95,6 +96,7 @@ commit to your branch and not the master
 
 - cd Level-5-Capstone-Project
 - nodemon index.js
+-
 
 # 2. Start frontend
 
@@ -102,6 +104,25 @@ commit to your branch and not the master
 - cd Level-5-Capstone-Project/client
 - npm start
 
+Finished -
+Home Page( Just needs CSS)
+
+Not finished -
+Form (Nick) (add one day a week break)
+Edit and delete (Cecilia)
+CSS (Natalie)
+Summer Breaks Inputs  = [dates](Simple Form)(Specify if it's interrupted few hours)
+
+
+
+const handleChangePayoffCalc = (event) => {
+        const {name, value, type, checked} = event.target
+        setPCInputInput(prevInput => {
+            if(type === "checkbox")
+                return ({...prevInput, [name]: checked})
+            return ({...prevInput, [name]: value})
+        }) 
+    }
 
     
 

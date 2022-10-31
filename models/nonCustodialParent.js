@@ -5,114 +5,34 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 
 const nonCustodialParentSchema = new Schema({
 
-    child: {
-        name: {
-            type: String,
-            required: true
-        },
-        schoolTime: {
-            beginningTime: {
-                type: Number,
-                required: true
-            },
-            endingTime: {
-                type: Number,
-                required: true
-            }
-        },
-        dayOfChildsBirthday: {
-            month: {
-                type: String,
-                enum: months,
-                required: true
-            },
-            day: Number
-        }
-
-    },
-
-    winterBreakFirstHalf: {
-        month: {
-            type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
-            required: true
-        },
-        endDate: {
-            type: Number,
-            required: true
-        }
-    },
-
-    winterBreakSecondHalf: {
-        startMonth: {
-            type: String,
-            enum: months,
-            required: true
-        },
-        endMonth: {
-            type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
-            required: true
-        },
-        endDate: {
-            type: String,
-            required: true
-        }
-    },
-
-    fallBreak: {
-        month: {
-            type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
-            required: true
-        },
-        endDate: {
-            type: Number,
-            required: true
-        }
-    },
-
-    springBreak: {
-        month: {
-            type: String,
-            enum: months,
-            required: true
-        },
-        startDate:
-        {
-            type: Number,
-            required: true
-        },
-        endDate: {
-            type: Number,
-            required: true
-        }
-    },
-
-    oneWeekDayEvening: {
+    childName: {
         type: String,
-        default: "Wednesday"
+        required: true
+    },
+    childBeginningSchoolTime: {
+        type: String,
+        required: true
+    },
+    childEndingSchoolTime: {
+        type: String,
+        required: true
+    },
+    childBirthday: {
+        type: String,
+        required: true
     },
 
-    workAvailabilityEndTime: {
-        type: Number,
-        required: true
-    }
+    winterBreakFirstHalfStartDate: String,
+    winterBreakFirstHalfEndDate: String,
+   
+    winterBreakSecondHalfStartDate: String,
+    winterBreakSecondHalfEndDate: String,
+    
+    fallBreakStartDate: String,
+    fallBreakEndDate: String,
+    
+    springBreakStartDate: String,
+    springBreakEndDate: String
 })
 
 

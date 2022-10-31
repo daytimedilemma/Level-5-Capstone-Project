@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UseContext } from "../InputContext"
 
 export default function ChildForm() {
+  const {
+    fallBreak,
+    winterBreakFirstHalf,
+    winterBreakSecondHalf,
+    springBreak
+  } = useContext(UseContext)
+
+
   const [child, setChild] = useState({
     name: "",
     beginningSchoolTime: "07:30",
     endingSchoolTime: "03:00",
     birthday: ""
-
   });
 
-  function handleChange(e) {
+
+
+
+  function handleChildChange(e) {
     const { name, value } = e.target;
     setChild((prevChild) => {
       return {
@@ -18,7 +29,9 @@ export default function ChildForm() {
       };
     });
   }
+
   
+  console.log (child.name)
   return (
     <>
       Child's Name
@@ -27,7 +40,7 @@ export default function ChildForm() {
           type="text"
           value={child.name}
           name="name"
-          onChange={handleChange}
+          onChange={handleChildChange}
         />
       </label>
       <label>
@@ -37,7 +50,7 @@ export default function ChildForm() {
           value={child.beginningSchoolTime}
           name="beginningSchoolTime"
           max="12:00"
-          onChange={handleChange}
+          onChange={handleChildChange}
         />
       </label>
       <label>
@@ -47,7 +60,7 @@ export default function ChildForm() {
           value={child.endingSchoolTime}
           name="endingSchoolTime"
           max="12:00"
-          onChange={handleChange}
+          onChange={handleChildChange}
         />
       </label>
       <label>
@@ -56,7 +69,7 @@ export default function ChildForm() {
           type="date"
           name="birthday"
           value={child.birthday}
-          onChange={handleChange} />
+          onChange={handleChildChange} />
       </label>
     </>
   );
