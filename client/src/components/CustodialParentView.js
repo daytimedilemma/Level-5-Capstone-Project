@@ -10,7 +10,6 @@ function CustodialParentView() {
         getParentData,
         setCustodialParentData,
         custodialParentData,
-        handleSubmit
     }
         = useContext(UseContext)
 

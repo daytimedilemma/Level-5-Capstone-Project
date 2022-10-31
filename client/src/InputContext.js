@@ -8,7 +8,7 @@ function UseContextProvider(props) {
     //Get All request for data
 
     const [custodialParentData, setCustodialParentData] = useState([])
-
+    const [nonCustodialParentData, setNonCustodialParentData] = useState([])
     
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
@@ -193,7 +193,9 @@ function UseContextProvider(props) {
             year,
             custodialParentData,
             setCustodialParentData,
-            handleSubmit
+            handleSubmit,
+            nonCustodialParentData,
+            setNonCustodialParentData
         }}>
             {props.children}
         </UseContext.Provider>

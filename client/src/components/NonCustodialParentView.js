@@ -5,8 +5,12 @@ import SeasonalBreakInputs from "./seasonBreakInputs/SeasonalBreaksInput"
 
 
 function NonCustodialParentView() {
-    const [nonCustodialParentData, setNonCustodialParentData] = useState([])
-    const { getParentData, displayInputs} = useContext(UseContext)
+   
+    const { 
+        getParentData,
+        nonCustodialParentData,
+        setNonCustodialParentData
+    } = useContext(UseContext)
     // const displayParentInputs = displayInputs("nonCustodialParent")
 
     useEffect(() => {
