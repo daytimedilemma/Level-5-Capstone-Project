@@ -15,9 +15,8 @@ function CustodialParentView() {
     useEffect(() => {
         getParentData("custodialParent", setCustodialParentData)
     }, [])
-
+    console.log(custodialParentData)
     const displayData = custodialParentData.map((data, index) => {
-      
         const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = data
         return (
             <div key={index}>

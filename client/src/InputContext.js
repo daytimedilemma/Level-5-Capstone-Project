@@ -8,6 +8,7 @@ function UseContextProvider(props) {
     //Get All request for data
 
     const [custodialParentData, setCustodialParentData] = useState([])
+    const [nonCustodialParentData, setNonCustodialParentData] = useState([])
     const [calendar, setCalendar] = useState([])
 
     const API_KEY = `AIzaSyCSM5CLpacQnfpw0qJMxGigpjh5LE7rGuc`
@@ -202,7 +203,10 @@ function UseContextProvider(props) {
             year,
             custodialParentData,
             setCustodialParentData,
-            handleSubmit
+            nonCustodialParentData,
+            setNonCustodialParentData,
+            addNonCustodialParentData,
+            addCustodialParentData
         }}>
             {props.children}
         </UseContext.Provider>
