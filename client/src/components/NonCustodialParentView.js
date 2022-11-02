@@ -1,5 +1,4 @@
-import React,{useState, useEffect, useContext} from "react"
-import ChildForm from "./ChildForm"
+import React,{ useEffect, useContext} from "react"
 import { UseContext } from "../InputContext"
 import SeasonalBreakInputs from "./seasonBreakInputs/SeasonalBreaksInput"
 
@@ -11,7 +10,7 @@ function NonCustodialParentView() {
         nonCustodialParentData,
         setNonCustodialParentData
     } = useContext(UseContext)
-    // const displayParentInputs = displayInputs("nonCustodialParent")
+    
 
     useEffect(() => {
         getParentData("nonCustodialParent", setNonCustodialParentData)
@@ -31,13 +30,13 @@ function NonCustodialParentView() {
     return (
         <>
             <h1 className="welcome">Non-Custodial Parent</h1>
-            <form>
+            <>
                 <SeasonalBreakInputs 
                 parent = "nonCustodialParent"
                 data = {nonCustodialParentData}
                 setData = {setNonCustodialParentData}
                 />
-            </form>
+            </>
             <h2>Your Kid(s)</h2>
             {displayData}
         </>

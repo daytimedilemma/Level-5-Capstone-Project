@@ -219,7 +219,7 @@ export default function SeasonalBreakInputs(props) {
     }
    
     const displaySeasonalInputs = seasonalInputs()
-
+    
     return (
         <>
             <form onSubmit={handleSubmit}>

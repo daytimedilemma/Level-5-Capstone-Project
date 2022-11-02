@@ -24,12 +24,16 @@ function UseContextProvider(props) {
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
             .then(res => {
-                setParentData(preParentData => {
-                    return ([...preParentData, res.data[0]])
+                const data = res.data.map(mappedArray => {
+                    setParentData(preParentData => {
+                        return ([...preParentData, mappedArray])
+                    })
                 })
             })
             .catch(err => console.log(err))
     }
+
+    
 
     //Post Request for a single input
     //***Take away one of the parent routes to just one???***

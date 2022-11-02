@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import ChildForm from "./ChildForm"
+
 import { UseContext } from "../InputContext"
 import SeasonalBreakInputs from "./seasonBreakInputs/SeasonalBreaksInput"
 
@@ -14,8 +14,9 @@ function CustodialParentView() {
 
     useEffect(() => {
         getParentData("custodialParent", setCustodialParentData)
+        
     }, [])
-    console.log(custodialParentData)
+   
     const displayData = custodialParentData.map((data, index) => {
         const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = data
         return (
@@ -26,7 +27,7 @@ function CustodialParentView() {
             </div>
         )
     })
-
+    
     return (
         <>
             <h1 className="welcome">Custodial Parent</h1>
