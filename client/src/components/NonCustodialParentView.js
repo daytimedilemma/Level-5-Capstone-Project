@@ -17,8 +17,8 @@ function NonCustodialParentView() {
         const {childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday} = data
         return (
             <div key={index}>
-                <h3>{childName}</h3>
-                <h4>Birthday: {childBirthday}</h4>
+                <h4>{childName}</h4>
+                <p>DOB: {childBirthday}</p>
                 <p>{childName} is in school from {childBeginningSchoolTime}AM to {childEndingSchoolTime}PM</p>
             </div>
         )
@@ -30,7 +30,7 @@ function NonCustodialParentView() {
             <form>
                 <SeasonalBreakInputs parent = "nonCustodialParent"/>
             </form>
-            <h2>Your Kid(s)</h2>
+            <h3>Your Child(ren):</h3>
             {displayData}
         </>
     )

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react"
 import { UseContext } from "../../InputContext"
+import "../../style.css"
 
 export default function SeasonalBreakInputs(props) {
 
@@ -51,7 +52,7 @@ export default function SeasonalBreakInputs(props) {
                 (
                     <>
                         <label>
-                            Fall Break
+                            Fall Break:
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
@@ -69,7 +70,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
 
                         <label>
-                            First Half of Winter Break
+                            First Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfStartDate"
@@ -92,7 +93,7 @@ export default function SeasonalBreakInputs(props) {
                 (
                     <>
                         <label>
-                            Fall Break
+                            Fall Break:
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
@@ -110,7 +111,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
                         <br />
                         <label>
-                            First Half of Winter Break
+                            First Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfStartDate"
@@ -133,7 +134,7 @@ export default function SeasonalBreakInputs(props) {
                     <>
                         <br />
                         <label>
-                            Second Half of Winter Break
+                            Second Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfStartDate"
@@ -151,7 +152,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
                         <br />
                         <label>
-                            Spring Break
+                            Spring Break:
                             <input
                                 type="date"
                                 name="springBreakStartDate"
@@ -204,18 +205,21 @@ const displaySeasonalInputs = seasonalInputs()
 console.log(childAndSeasonInput)
 return (
     <>
-    <form onSubmit={handleSubmit}>
-        Child's Name
+    <form onSubmit={handleSubmit} className="form">
+        
         <label>
+        Child's Name:
             <input
                 type="text"
                 value={childAndSeasonInput.childName}
                 name="childName"
                 onChange={handleChange}
+                placeholder="child's name"
             />
         </label>
+        
         <label>
-            School Start Time
+        School Start Time:
             <input
                 type="time"
                 value={childAndSeasonInput.childBeginningSchoolTime}
@@ -226,7 +230,7 @@ return (
         </label>
 
         <label>
-            School End Time
+            School End Time:
             <input
                 type="time"
                 value={childAndSeasonInput.childEndingSchoolTime}
@@ -237,7 +241,7 @@ return (
         </label>
 
         <label>
-            Your Child's Birthday:
+            Child's Birthday:
             <input
                 type="date"
                 name="childBirthday"
