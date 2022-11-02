@@ -4,9 +4,9 @@ import calendarpreview from "./calendarpreview.png"
 function Home(){
    return (
    <div>
-         <div>Welcome to the Custody Calendar!</div>
+         <h1 className="welcome">Welcome to the Custody Calendar!</h1>
 
-         <p>Here you will find an easy and seamless way to upload all your availability to schedule time with the most important person/persons in your life in a couple easy steps! This calendar app will give you a quick glimpse to lessen your time with scheduling, check out a sample below. </p>
+         <p>Here you will find an easy and seamless way to upload your parent time schedule with the most important people in your life in a couple easy steps! This calendar app will lessen your time spent on scheduling! Check out a sample below. </p>
 
          <div> Instructions:
          <ol>

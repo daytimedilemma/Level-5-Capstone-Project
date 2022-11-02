@@ -33,9 +33,9 @@ export default function ChildForm() {
   
   console.log (child.name)
   return (
-    <>
-      Child's Name
+    <div className="form-part">
       <label>
+        Child's Name
         <input
           type="text"
           value={child.name}
@@ -53,6 +53,7 @@ export default function ChildForm() {
           onChange={handleChildChange}
         />
       </label>
+      
       <label>
         School End Time
         <input
@@ -71,6 +72,6 @@ export default function ChildForm() {
           value={child.birthday}
           onChange={handleChildChange} />
       </label>
-    </>
+    </div>
   );
 }

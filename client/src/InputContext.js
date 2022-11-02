@@ -8,7 +8,17 @@ function UseContextProvider(props) {
     //Get All request for data
 
     const [custodialParentData, setCustodialParentData] = useState([])
-    const [nonCustodialParentData, setNonCustodialParentData] = useState([])
+    const [calendar, setCalendar] = useState([])
+
+    const API_KEY = `AIzaSyCSM5CLpacQnfpw0qJMxGigpjh5LE7rGuc`
+
+    function getCalendar() {
+        axios.get(`https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday@group.v.calendar.google.com/events?key=${API_KEY}`)
+            .then(res => {setCalendar(res.data)
+            console.log(res.data)}
+            )
+            .catch(err => console.log(err))
+    }
     
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
@@ -43,7 +53,7 @@ function UseContextProvider(props) {
     
     const custodialHolidays = [
         {
-            evenHolidays: {
+            eventHolidays: {
                 drMartinLutherKing: {
                     //Need to add arguement for Friday schedule
                     name: "Dr. Martin Luther King Jr. Day",
@@ -85,7 +95,7 @@ function UseContextProvider(props) {
                     endingDay: "Day before school begins" //Retrieve Fall Break dates, user input
                 },
 
-                verteransDay: {
+                veteransDay: {
                     name: "Veterans Day",
                     beginningTime: "6:00PM",
                     beginningDay: "Day before Veterans Day",
@@ -192,10 +202,7 @@ function UseContextProvider(props) {
             year,
             custodialParentData,
             setCustodialParentData,
-            nonCustodialParentData,
-            setNonCustodialParentData,
-            addNonCustodialParentData,
-            addCustodialParentData
+            handleSubmit
         }}>
             {props.children}
         </UseContext.Provider>
