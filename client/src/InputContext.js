@@ -24,23 +24,22 @@ function UseContextProvider(props) {
     //***Take away one of the parent routes to just one???***
      //Form Submission
 
-  
-
-    const [inputs, setInputs] = useState()
+    function addNonCustodialParentData(newData){
+        axios.post(`/nonCustodial`, newData)
+        .then(res => {
+            setNonCustodialParentData(prevParentData => [...prevParentData, res.data])
+        })
+        .catch(err => console.log(err)) 
+    }
     
-    function addParentData(newData, parent, setParent){
-        axios.post("/custodialParent", newData)
+    function addCustodialParentData(newData){
+        axios.post(`/custodialParent`, newData)
             .then(res => {
                 setCustodialParentData(prevParentData => [...prevParentData, res.data])
             })
             .catch(err => console.log(err))
     }
 
-    function handleSubmit(e, parent, setParent){
-        e.preventDefault()
-        
-        setInputs()
-    }
     
     const custodialHolidays = [
         {
@@ -193,9 +192,10 @@ function UseContextProvider(props) {
             year,
             custodialParentData,
             setCustodialParentData,
-            handleSubmit,
             nonCustodialParentData,
-            setNonCustodialParentData
+            setNonCustodialParentData,
+            addNonCustodialParentData,
+            addCustodialParentData
         }}>
             {props.children}
         </UseContext.Provider>

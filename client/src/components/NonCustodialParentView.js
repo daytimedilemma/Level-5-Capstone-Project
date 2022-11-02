@@ -32,7 +32,11 @@ function NonCustodialParentView() {
         <>
             <h1>Non Custodial Parent View</h1>
             <form>
-                <SeasonalBreakInputs parent = "nonCustodialParent"/>
+                <SeasonalBreakInputs 
+                parent = "nonCustodialParent"
+                data = {nonCustodialParentData}
+                setData = {setNonCustodialParentData}
+                />
             </form>
             <h2>Your Kid(s)</h2>
             {displayData}

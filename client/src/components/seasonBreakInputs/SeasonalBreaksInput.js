@@ -3,7 +3,9 @@ import { UseContext } from "../../InputContext"
 
 export default function SeasonalBreakInputs(props) {
 
-    const { year, handleSubmit } = useContext(UseContext)
+    const { year, addNonCustodialParentData, addCustodialParentData} = useContext(UseContext)
+
+
 
     function seasonalInputs() {
         if (props.parent === "custodialParent") {
@@ -15,7 +17,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfStartDate"
-                                value={childAndSeasonInput.winterBreakSecondHalfStartDate}
+                                value={childAndSeasonInputInit.winterBreakSecondHalfStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -24,7 +26,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfEndDate"
-                                value={childAndSeasonInput.winterBreakSecondHalfEndDate}
+                                value={childAndSeasonInputInit.winterBreakSecondHalfEndDate}
                                 onChange={handleChange} />
                         </label>
                         <br />
@@ -33,7 +35,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="springBreakStartDate"
-                                value={childAndSeasonInput.springBreakStartDate}
+                                value={childAndSeasonInputInit.springBreakStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -42,7 +44,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="springBreakEndDate"
-                                value={childAndSeasonInput.springBreakEndDate}
+                                value={childAndSeasonInputInit.springBreakEndDate}
                                 onChange={handleChange} />
                         </label>
                     </>
@@ -55,7 +57,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
-                                value={childAndSeasonInput.fallBreakStartDate}
+                                value={childAndSeasonInputInit.fallBreakStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -64,7 +66,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="fallBreakEndDate"
-                                value={childAndSeasonInput.fallBreakEndDate}
+                                value={childAndSeasonInputInit.fallBreakEndDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -73,7 +75,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfStartDate"
-                                value={childAndSeasonInput.winterBreakFirstHalfStartDate}
+                                value={childAndSeasonInputInit.winterBreakFirstHalfStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -82,7 +84,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfEndDate"
-                                value={childAndSeasonInput.winterBreakFirstHalfEndDate}
+                                value={childAndSeasonInputInit.winterBreakFirstHalfEndDate}
                                 onChange={handleChange} />
                         </label>
                     </>
@@ -96,7 +98,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
-                                value={childAndSeasonInput.fallBreakStartDate}
+                                value={childAndSeasonInputInit.fallBreakStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -105,7 +107,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="fallBreakEndDate"
-                                value={childAndSeasonInput.fallBreakEndDate}
+                                value={childAndSeasonInputInit.fallBreakEndDate}
                                 onChange={handleChange} />
                         </label>
                         <br />
@@ -114,7 +116,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfStartDate"
-                                value={childAndSeasonInput.winterBreakFirstHalfStartDate}
+                                value={childAndSeasonInputInit.winterBreakFirstHalfStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -123,7 +125,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfEndDate"
-                                value={childAndSeasonInput.winterBreakFirstHalfEndDate}
+                                value={childAndSeasonInputInit.winterBreakFirstHalfEndDate}
                                 onChange={handleChange} />
                         </label>
                     </>
@@ -137,7 +139,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfStartDate"
-                                value={childAndSeasonInput.winterBreakSecondHalfStartDate}
+                                value={childAndSeasonInputInit.winterBreakSecondHalfStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -146,7 +148,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfEndDate"
-                                value={childAndSeasonInput.winterBreakSecondHalfEndDate}
+                                value={childAndSeasonInputInit.winterBreakSecondHalfEndDate}
                                 onChange={handleChange} />
                         </label>
                         <br />
@@ -155,7 +157,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="springBreakStartDate"
-                                value={childAndSeasonInput.springBreakStartDate}
+                                value={childAndSeasonInputInit.springBreakStartDate}
                                 onChange={handleChange} />
                         </label>
 
@@ -164,7 +166,7 @@ export default function SeasonalBreakInputs(props) {
                             <input
                                 type="date"
                                 name="springBreakEndDate"
-                                value={childAndSeasonInput.springBreakEndDate}
+                                value={childAndSeasonInputInit.springBreakEndDate}
                                 onChange={handleChange} />
                         </label>
                     </>
@@ -174,7 +176,7 @@ export default function SeasonalBreakInputs(props) {
     }
 
 
-    const [childAndSeasonInput, setChildAndSeasonInput] = useState({
+    const childAndSeasonInputInit = {
         childName: "",
         childBeginningSchoolTime: "07:30",
         childEndingSchoolTime: "03:00",
@@ -188,7 +190,18 @@ export default function SeasonalBreakInputs(props) {
         springBreakStartDate: "",
         springBreakEndDate: ""
 
-    })
+    }
+
+    const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
+
+    function handleSubmit(e){
+        e.preventDefault()
+       props.parent === "custodialParent" ?
+        addCustodialParentData(childAndSeasonInput)
+       :
+       addNonCustodialParentData(childAndSeasonInput);
+       setChildAndSeasonInput(childAndSeasonInputInit)
+    }
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -201,7 +214,7 @@ export default function SeasonalBreakInputs(props) {
       }
 
 const displaySeasonalInputs = seasonalInputs()
-console.log(childAndSeasonInput)
+
 return (
     <>
     <form onSubmit={handleSubmit}>
@@ -209,7 +222,7 @@ return (
         <label>
             <input
                 type="text"
-                value={childAndSeasonInput.childName}
+                value={childAndSeasonInputInit.childName}
                 name="childName"
                 onChange={handleChange}
             />
@@ -218,7 +231,7 @@ return (
             School Start Time
             <input
                 type="time"
-                value={childAndSeasonInput.childBeginningSchoolTime}
+                value={childAndSeasonInputInit.childBeginningSchoolTime}
                 name="childBeginningSchoolTime"
                 max="12:00"
                 onChange={handleChange}
@@ -229,7 +242,7 @@ return (
             School End Time
             <input
                 type="time"
-                value={childAndSeasonInput.childEndingSchoolTime}
+                value={childAndSeasonInputInit.childEndingSchoolTime}
                 name="childEndingSchoolTime"
                 max="12:00"
                 onChange={handleChange}
@@ -241,7 +254,7 @@ return (
             <input
                 type="date"
                 name="childBirthday"
-                value={childAndSeasonInput.childBirthday}
+                value={childAndSeasonInputInit.childBirthday}
                 onChange={handleChange} />
         </label>
         <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>

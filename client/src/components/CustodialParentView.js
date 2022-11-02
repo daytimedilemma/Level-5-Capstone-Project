@@ -4,7 +4,6 @@ import { UseContext } from "../InputContext"
 import SeasonalBreakInputs from "./seasonBreakInputs/SeasonalBreaksInput"
 
 function CustodialParentView() {
-    // const [custodialParentData, setCustodialParentData] = useState([])
 
     const {
         getParentData,
