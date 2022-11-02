@@ -26,7 +26,7 @@ function NonCustodialParentView() {
 
     return (
         <>
-            <h1>Non Custodial Parent View</h1>
+            <h1 className="welcome">Non-Custodial Parent</h1>
             <form>
                 <SeasonalBreakInputs parent = "nonCustodialParent"/>
             </form>

@@ -32,7 +32,7 @@ function CustodialParentView() {
 
     return (
         <>
-            <h1>Custodial Parent View</h1>
+            <h1 className="welcome">Custodial Parent</h1>
                 <SeasonalBreakInputs 
                 parent = "custodialParent"
                 data = {custodialParentData}
