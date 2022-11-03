@@ -248,8 +248,9 @@ return (
                 value={childAndSeasonInput.childBirthday}
                 onChange={handleChange} />
         </label>
-        <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
+        <h3>Seasonal Breaks for the {year} - {year + 1} School Year</h3>
         {displaySeasonalInputs}
+        <br />
         <br />
         <button>Submit New Child Entry</button>
         </form>
