@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UseContext } from "../InputContext"
+import "../style.css"
 
 export default function ChildForm() {
   const {

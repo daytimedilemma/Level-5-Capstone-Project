@@ -21,8 +21,8 @@ function CustodialParentView() {
         const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = data
         return (
             <div key={index}>
-                <h3>{childName}</h3>
-                <h4>Birthday: {childBirthday}</h4>
+                <h4>{childName}</h4>
+                <p>DOB: {childBirthday}</p>
                 <p>{childName} is in school from {childBeginningSchoolTime}AM to {childEndingSchoolTime}PM</p>
             </div>
         )
@@ -38,6 +38,8 @@ function CustodialParentView() {
                 /> 
             
             <h2>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h2>
+            <br/>
+            <h3>Your Child(ren):</h3>
             {displayData}
         </>
     )

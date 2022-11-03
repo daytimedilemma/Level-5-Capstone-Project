@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react"
 import { UseContext } from "../../InputContext"
+import "../../style.css"
 
 export default function SeasonalBreakInputs(props) {
 
@@ -57,7 +58,7 @@ export default function SeasonalBreakInputs(props) {
                 (
                     <>
                         <label>
-                            Fall Break
+                            Fall Break:
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
@@ -75,7 +76,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
 
                         <label>
-                            First Half of Winter Break
+                            First Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfStartDate"
@@ -98,7 +99,7 @@ export default function SeasonalBreakInputs(props) {
                 (
                     <>
                         <label>
-                            Fall Break
+                            Fall Break:
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
@@ -116,7 +117,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
                         <br />
                         <label>
-                            First Half of Winter Break
+                            First Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakFirstHalfStartDate"
@@ -139,7 +140,7 @@ export default function SeasonalBreakInputs(props) {
                     <>
                         <br />
                         <label>
-                            Second Half of Winter Break
+                            Second Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfStartDate"
@@ -157,7 +158,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
                         <br />
                         <label>
-                            Spring Break
+                            Spring Break:
                             <input
                                 type="date"
                                 name="springBreakStartDate"
@@ -216,59 +217,62 @@ export default function SeasonalBreakInputs(props) {
                 [name]: value
             };
         });
-    }
-   
-    const displaySeasonalInputs = seasonalInputs()
-    
-    return (
-        <>
-            <form onSubmit={handleSubmit}>
-                Child's Name
-                <label>
-                    <input
-                        type="text"
-                        value={childAndSeasonInput.childName}
-                        name="childName"
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    School Start Time
-                    <input
-                        type="time"
-                        value={childAndSeasonInput.childBeginningSchoolTime}
-                        name="childBeginningSchoolTime"
-                        max="12:00"
-                        onChange={handleChange}
-                    />
-                </label>
+      }
 
-                <label>
-                    School End Time
-                    <input
-                        type="time"
-                        value={childAndSeasonInput.childEndingSchoolTime}
-                        name="childEndingSchoolTime"
-                        max="12:00"
-                        onChange={handleChange}
-                    />
-                </label>
+const displaySeasonalInputs = seasonalInputs()
+console.log(childAndSeasonInput)
+return (
+    <>
+    <form onSubmit={handleSubmit} className="form">
+        
+        <label>
+        Child's Name:
+            <input
+                type="text"
+                value={childAndSeasonInput.childName}
+                name="childName"
+                onChange={handleChange}
+                placeholder="child's name"
+            />
+        </label>
+        
+        <label>
+        School Start Time:
+            <input
+                type="time"
+                value={childAndSeasonInput.childBeginningSchoolTime}
+                name="childBeginningSchoolTime"
+                max="12:00"
+                onChange={handleChange}
+            />
+        </label>
 
-                <label>
-                    Your Child's Birthday:
-                    <input
-                        type="date"
-                        name="childBirthday"
-                        value={childAndSeasonInput.childBirthday}
-                        onChange={handleChange} />
-                </label>
-                <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
-                {displaySeasonalInputs}
-                <br />
-                <button>Submit New Child Entry</button>
-            </form>
-        </>
-    )
+        <label>
+            School End Time
+            <input
+                type="time"
+                value={childAndSeasonInput.childEndingSchoolTime}
+                name="childEndingSchoolTime"
+                max="12:00"
+                onChange={handleChange}
+            />
+        </label>
+
+        <label>
+            Your Child's Birthday:
+            <input
+                type="date"
+                name="childBirthday"
+                value={childAndSeasonInput.childBirthday}
+                onChange={handleChange} />
+        </label>
+        <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
+        {displaySeasonalInputs}
+        <br />
+        <button>Submit New Child Entry</button>
+        </form>
+    </>
+)
 
 
 }
