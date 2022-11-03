@@ -37,7 +37,7 @@ function NonCustodialParentView() {
                 setData = {setNonCustodialParentData}
                 />
             </>
-            <h2>Your Kid(s)</h2>
+            <h2>Your {nonCustodialParentData.length > 1 ? "Children" : "Child"}</h2>
             {displayData}
         </>
     )
