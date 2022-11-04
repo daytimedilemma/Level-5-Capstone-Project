@@ -37,9 +37,8 @@ function CustodialParentView() {
                 setData = {setCustodialParentData}
                 /> 
             
-            <h2>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h2>
-            <br/>
-            <h3>Your Child(ren):</h3>
+            <h3>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h3>
+        
             {displayData}
         </>
     )

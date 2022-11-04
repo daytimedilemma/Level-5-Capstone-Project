@@ -108,21 +108,23 @@ Finished -
 Home Page( Just needs CSS)
 
 Not finished -
-Form (Nick) (add one day a week break)
+Form (Nick) ***(add one day a week break)***
 Edit and delete (Cecilia)
 CSS (Natalie)
 Summer Breaks Inputs  = [dates](Simple Form)(Specify if it's interrupted few hours)
 
 
 
-const handleChangePayoffCalc = (event) => {
+
+
+<!-- const handleChangePayoffCalc = (event) => {
         const {name, value, type, checked} = event.target
         setPCInputInput(prevInput => {
             if(type === "checkbox")
                 return ({...prevInput, [name]: checked})
             return ({...prevInput, [name]: value})
         }) 
-    }
+    } -->
 
     
 
