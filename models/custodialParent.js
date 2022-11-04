@@ -157,6 +157,12 @@ const custodialParentSchema = new Schema({
         required: true
     },
 
+    nonCustodialWeekDayInput : {
+        startTime: String,
+        endTime: String,
+        dayOfWeek: String
+    }, 
+    
     winterBreakFirstHalfStartDate: String,
     winterBreakFirstHalfEndDate: String,
    

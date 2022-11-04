@@ -1,10 +1,17 @@
 import React, { useState, useContext } from "react"
 import { UseContext } from "../../InputContext"
 import "../../style.css"
+import NonCustodialWeekDayInput from "./NonCustodialWeekDayInput"
 
 export default function SeasonalBreakInputs(props) {
 
-    const { year, handleSubmit } = useContext(UseContext)
+    const { year,
+        addNonCustodialParentData,
+        addCustodialParentData,
+    
+    } = useContext(UseContext)
+
+
 
     function seasonalInputs() {
         if (props.parent === "custodialParent") {
@@ -175,7 +182,7 @@ export default function SeasonalBreakInputs(props) {
     }
 
 
-    const [childAndSeasonInput, setChildAndSeasonInput] = useState({
+    const childAndSeasonInputInit = {
         childName: "",
         childBeginningSchoolTime: "07:30",
         childEndingSchoolTime: "03:00",
@@ -188,16 +195,28 @@ export default function SeasonalBreakInputs(props) {
         winterBreakSecondHalfEndDate: "",
         springBreakStartDate: "",
         springBreakEndDate: ""
+    }
 
-    })
+    const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        if (props.parent === "custodialParent") {
+            addCustodialParentData(childAndSeasonInput)
+            
+        } else if (props.parent === "nonCustodialParent") {
+            addNonCustodialParentData(childAndSeasonInput)
+        }
+        setChildAndSeasonInput(childAndSeasonInputInit)
+    }
 
     function handleChange(e) {
         const { name, value } = e.target;
         setChildAndSeasonInput((prevChild) => {
-          return {
-            ...prevChild,
-            [name]: value
-          };
+            return {
+                ...prevChild,
+                [name]: value
+            };
         });
       }
 
@@ -230,7 +249,7 @@ return (
         </label>
 
         <label>
-            School End Time:
+            School End Time
             <input
                 type="time"
                 value={childAndSeasonInput.childEndingSchoolTime}
@@ -241,16 +260,16 @@ return (
         </label>
 
         <label>
-            Child's Birthday:
+            Your Child's Birthday:
             <input
                 type="date"
                 name="childBirthday"
                 value={childAndSeasonInput.childBirthday}
                 onChange={handleChange} />
         </label>
-        <h3>Seasonal Breaks for the {year} - {year + 1} School Year</h3>
+        <NonCustodialWeekDayInput />
+        <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
         {displaySeasonalInputs}
-        <br />
         <br />
         <button>Submit New Child Entry</button>
         </form>
@@ -258,4 +277,4 @@ return (
 )
 
 
-    }
+}
