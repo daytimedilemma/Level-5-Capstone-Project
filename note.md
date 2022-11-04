@@ -108,7 +108,7 @@ Finished -
 Home Page( Just needs CSS)
 
 Not finished -
-Form (Nick) ***(add one day a week break)***
+Form (Nick) ***(add one day a week break)*** Done
 Edit and delete (Cecilia)
 CSS (Natalie)
 Summer Breaks Inputs  = [dates](Simple Form)(Specify if it's interrupted few hours)

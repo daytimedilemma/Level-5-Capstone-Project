@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import { UseContext } from "../../InputContext"
 import "../../style.css"
+import NonCustodialWeekDayInput from "./NonCustodialWeekDayInput"
 
 export default function SeasonalBreakInputs(props) {
 
@@ -266,6 +267,7 @@ return (
                 value={childAndSeasonInput.childBirthday}
                 onChange={handleChange} />
         </label>
+        <NonCustodialWeekDayInput />
         <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
         {displaySeasonalInputs}
         <br />
