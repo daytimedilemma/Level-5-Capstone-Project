@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react"
 import { UseContext } from "../../InputContext"
 import "../../style.css"
 import NonCustodialWeekDayInput from "./NonCustodialWeekDayInput"
+import SummerBreakInputs from "./SummerBreakInputs"
+
 
 export default function SeasonalBreakInputs(props) {
 
@@ -221,7 +223,7 @@ export default function SeasonalBreakInputs(props) {
       }
 
 const displaySeasonalInputs = seasonalInputs()
-console.log(childAndSeasonInput)
+
 return (
     <>
     <form onSubmit={handleSubmit} className="form">
@@ -270,6 +272,8 @@ return (
         <NonCustodialWeekDayInput />
         <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
         {displaySeasonalInputs}
+        <br/>
+        {/* <SummerBreakInputs /> */}
         <br />
         <button>Submit New Child Entry</button>
         </form>
