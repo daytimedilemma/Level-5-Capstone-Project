@@ -13,8 +13,8 @@ export default function ChildForm() {
 
   const [child, setChild] = useState({
     name: "",
-    beginningSchoolTime: "07:30",
-    endingSchoolTime: "03:00",
+    beginningSchoolTime: "",
+    endingSchoolTime: "",
     birthday: ""
   });
 
@@ -50,7 +50,7 @@ export default function ChildForm() {
           type="time"
           value={child.beginningSchoolTime}
           name="beginningSchoolTime"
-          max="12:00"
+          max=""
           onChange={handleChildChange}
         />
       </label>
@@ -61,7 +61,7 @@ export default function ChildForm() {
           type="time"
           value={child.endingSchoolTime}
           name="endingSchoolTime"
-          max="12:00"
+          max=""
           onChange={handleChildChange}
         />
       </label>

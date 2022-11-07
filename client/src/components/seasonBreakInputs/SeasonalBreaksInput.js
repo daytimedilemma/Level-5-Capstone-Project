@@ -186,7 +186,7 @@ export default function SeasonalBreakInputs(props) {
 
     const childAndSeasonInputInit = {
         childName: "",
-        childBeginningSchoolTime: "07:30",
+        childBeginningSchoolTime: "08:00",
         childEndingSchoolTime: "03:00",
         childBirthday: "",
         fallBreakStartDate: "",
@@ -222,6 +222,8 @@ export default function SeasonalBreakInputs(props) {
         });
       }
 
+      
+
 const displaySeasonalInputs = seasonalInputs()
 
 return (
@@ -245,7 +247,7 @@ return (
                 type="time"
                 value={childAndSeasonInput.childBeginningSchoolTime}
                 name="childBeginningSchoolTime"
-                max="12:00"
+                max=""
                 onChange={handleChange}
             />
         </label>
@@ -256,7 +258,7 @@ return (
                 type="time"
                 value={childAndSeasonInput.childEndingSchoolTime}
                 name="childEndingSchoolTime"
-                max="12:00"
+                max=""
                 onChange={handleChange}
             />
         </label>
@@ -275,7 +277,7 @@ return (
         <br/>
         {/* <SummerBreakInputs /> */}
         <br />
-        <button>Submit New Child Entry</button>
+        <button>Submit Child Entry</button>
         </form>
     </>
 )
