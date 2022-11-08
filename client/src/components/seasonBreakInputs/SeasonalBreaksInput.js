@@ -21,7 +21,7 @@ export default function SeasonalBreakInputs(props) {
                 (
                     <>
                         <label>
-                            Second Half of Winter Break
+                            Second Half of Winter Break:
                             <input
                                 type="date"
                                 name="winterBreakSecondHalfStartDate"
@@ -39,7 +39,7 @@ export default function SeasonalBreakInputs(props) {
                         </label>
                         <br />
                         <label>
-                            Spring Break
+                            Spring Break:
                             <input
                                 type="date"
                                 name="springBreakStartDate"
@@ -231,18 +231,18 @@ return (
     <form onSubmit={handleSubmit} className="form">
         
         <label>
-        Child's Name:
+            Child's Name:
             <input
                 type="text"
                 value={childAndSeasonInput.childName}
                 name="childName"
                 onChange={handleChange}
-                placeholder="child's name"
+                placeholder="Child's Name"
             />
         </label>
         
         <label>
-        School Start Time:
+            School Start Time:
             <input
                 type="time"
                 value={childAndSeasonInput.childBeginningSchoolTime}
@@ -253,7 +253,7 @@ return (
         </label>
 
         <label>
-            School End Time
+            School End Time:
             <input
                 type="time"
                 value={childAndSeasonInput.childEndingSchoolTime}
@@ -264,7 +264,7 @@ return (
         </label>
 
         <label>
-            Your Child's Birthday:
+            Child's Birthday:
             <input
                 type="date"
                 name="childBirthday"
@@ -272,7 +272,7 @@ return (
                 onChange={handleChange} />
         </label>
         <NonCustodialWeekDayInput />
-        <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
+        <h3>Seasonal Breaks for the {year} - {year + 1} School Year</h3>
         {displaySeasonalInputs}
         <br/>
         {/* <SummerBreakInputs /> */}
