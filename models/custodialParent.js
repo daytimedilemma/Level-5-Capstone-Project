@@ -44,7 +44,7 @@ const custodialHolidays = {
             endingDay: "Day before school begins" //Retrieve Fall Break dates, user input
         },
 
-        verteransDay: {
+        veteransDay: {
             name: "Veterans Day",
             beginningTime: "6:00PM",
             beginningDay: "Day before Veterans Day",

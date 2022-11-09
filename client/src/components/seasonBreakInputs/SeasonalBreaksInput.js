@@ -23,8 +23,9 @@ export default function SeasonalBreakInputs(props) {
                         <h3>{year}:</h3>
 
                         <label>
+
                             Fall Break:
-                            <input
+           <input
                                 type="date"
                                 name="fallBreakStartDate"
                                 value={childAndSeasonInput.fallBreakStartDate}
@@ -60,7 +61,7 @@ export default function SeasonalBreakInputs(props) {
 
                         <br />
                         <label>
-                            Spring Break
+                            Spring Break:
                             <input
                                 type="date"
                                 name="springBreakStartDate"
@@ -381,6 +382,7 @@ export default function SeasonalBreakInputs(props) {
                 [name]: value
             };
         });
+
     }
 
 
@@ -442,6 +444,7 @@ export default function SeasonalBreakInputs(props) {
             </form>
         </>
     )
+
 
 
 }
