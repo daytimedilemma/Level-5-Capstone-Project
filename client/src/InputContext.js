@@ -9,6 +9,8 @@ function UseContextProvider(props) {
 
     const [custodialParentData, setCustodialParentData] = useState([])
     const [nonCustodialParentData, setNonCustodialParentData] = useState([])
+    const [summerList, setSummerList] = useState([])
+    const[childAndSeasonList, setChildAndSeasonList] = useState([])
     const [calendar, setCalendar] = useState([])
 
     const API_KEY = `AIzaSyCSM5CLpacQnfpw0qJMxGigpjh5LE7rGuc`
@@ -210,7 +212,11 @@ function UseContextProvider(props) {
             nonCustodialParentData,
             setNonCustodialParentData,
             addNonCustodialParentData,
-            addCustodialParentData
+            addCustodialParentData,
+            summerList,
+            setSummerList,
+            childAndSeasonList,
+            setChildAndSeasonList
         }}>
             {props.children}
         </UseContext.Provider>
