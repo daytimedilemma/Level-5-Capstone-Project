@@ -44,7 +44,7 @@ const custodialHolidays = {
             endingDay: "Day before school begins" //Retrieve Fall Break dates, user input
         },
 
-        verteransDay: {
+        veteransDay: {
             name: "Veterans Day",
             beginningTime: "6:00PM",
             beginningDay: "Day before Veterans Day",
@@ -139,69 +139,41 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 
 const custodialParentSchema = new Schema({
 
-    child: {
-        name: {
-            type: String,
-            required: true
-        },
-        beginningSchoolTime: {
-          type: String,
-          required: true
-        },
-        endingSchoolTime: {
-            type: String,
-            required: true
-          },
-        birthday: {
-            type: String,
-            required: true
-        }
 
+    childName: {
+        type: String,
+        required: true
+    },
+    childBeginningSchoolTime: {
+        type: String,
+        required: true
+    },
+    childEndingSchoolTime: {
+        type: String,
+        required: true
+    },
+    childBirthday: {
+        type: String,
+        required: true
     },
 
-    winterBreakFirstHalf: {
-        startDate: {
-            type: String,
-            required: true
-        },
-        endDate: {
-            type: String,
-            required: true
-        }
-    },
-
-    winterBreakSecondHalf: {
-        startDate: {
-            type: String,
-            required: true
-        },
-        endDate: {
-            type: String,
-            required: true
-        }
-    },
-
-    fallBreak: {
-        startDate: {
-            type: String,
-            required: true
-        },
-        endDate: {
-            type: String,
-            required: true
-        }
-    },
-
-    springBreak: {
-        startDate: {
-            type: String,
-            required: true
-        },
-        endDate: {
-            type: String,
-            required: true
-        }
-    }
+    nonCustodialWeekDayInput : {
+        startTime: String,
+        endTime: String,
+        dayOfWeek: String
+    }, 
+    
+    winterBreakFirstHalfStartDate: String,
+    winterBreakFirstHalfEndDate: String,
+   
+    winterBreakSecondHalfStartDate: String,
+    winterBreakSecondHalfEndDate: String,
+    
+    fallBreakStartDate: String,
+    fallBreakEndDate: String,
+    
+    springBreakStartDate: String,
+    springBreakEndDate: String
 })
 
 

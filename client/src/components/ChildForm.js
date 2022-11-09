@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UseContext } from "../InputContext"
+import "../style.css"
 
 export default function ChildForm() {
+  const {
+    fallBreak,
+    winterBreakFirstHalf,
+    winterBreakSecondHalf,
+    springBreak
+  } = useContext(UseContext)
+
+
   const [child, setChild] = useState({
     name: "",
-    beginningSchoolTime: "07:30",
-    endingSchoolTime: "03:00",
+    beginningSchoolTime: "",
+    endingSchoolTime: "",
     birthday: ""
-
   });
 
-  function handleChange(e) {
+
+
+
+  function handleChildChange(e) {
     const { name, value } = e.target;
     setChild((prevChild) => {
       return {
@@ -18,16 +30,18 @@ export default function ChildForm() {
       };
     });
   }
+
   
+  console.log (child.name)
   return (
-    <>
-      Child's Name
+    <div className="form-part">
       <label>
+        Child's Name
         <input
           type="text"
           value={child.name}
           name="name"
-          onChange={handleChange}
+          onChange={handleChildChange}
         />
       </label>
       <label>
@@ -36,18 +50,19 @@ export default function ChildForm() {
           type="time"
           value={child.beginningSchoolTime}
           name="beginningSchoolTime"
-          max="12:00"
-          onChange={handleChange}
+          max=""
+          onChange={handleChildChange}
         />
       </label>
+      
       <label>
         School End Time
         <input
           type="time"
           value={child.endingSchoolTime}
           name="endingSchoolTime"
-          max="12:00"
-          onChange={handleChange}
+          max=""
+          onChange={handleChildChange}
         />
       </label>
       <label>
@@ -56,8 +71,8 @@ export default function ChildForm() {
           type="date"
           name="birthday"
           value={child.birthday}
-          onChange={handleChange} />
+          onChange={handleChildChange} />
       </label>
-    </>
+    </div>
   );
 }

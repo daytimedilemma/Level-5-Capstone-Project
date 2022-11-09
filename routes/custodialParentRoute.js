@@ -44,7 +44,7 @@ custodialParentRoute.delete("/:dataId", (req, res, next) => {
             res.status(500)
             return next(err)
         }
-        return res.status(200).send(`Successfully deleted ${deletedData.child.name} from the data`)
+        return res.status(200).send(`Successfully deleted ${deletedData.childName} from the data`)
     })
 })
 
@@ -62,32 +62,6 @@ custodialParentRoute.put("/:dataId", (req, res, next) => {
             return res.status(201).send(updatedData)
         })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

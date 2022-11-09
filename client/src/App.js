@@ -11,21 +11,19 @@ function App() {
     <div>
       <Router>
         <nav className="navbar">
-          <ul>
 
             <Link to="/"  >
-              <li>Home</li>
+              Home
             </Link>
 
             <Link to="noncustodialparentview"  >
-              <li>NonCustodial Parent View</li>
+              Non-Custodial Parent
             </Link>
 
             <Link to="custodialparentview"  >
-              <li>Custodial Parent View</li>
+              Custodial Parent
             </Link>
 
-          </ul>
         </nav>
 
         <Routes>

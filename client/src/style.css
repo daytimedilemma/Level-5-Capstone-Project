@@ -1,0 +1,33 @@
+body {
+    margin: 25px 50px;
+}
+
+.welcome {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.form label {
+    display: flex;
+    margin: 10px 0 0;
+}
+
+h3 {
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
