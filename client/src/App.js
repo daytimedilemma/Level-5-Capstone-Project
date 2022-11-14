@@ -4,6 +4,7 @@ import CustodialParentView from "./components/CustodialParentView.js"
 import NonCustodialParentView from "./components/NonCustodialParentView.js"
 import "./style.css"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Calendar from "./components/Calendar.js"
 
 function App() {
 
@@ -24,12 +25,17 @@ function App() {
               Custodial Parent
             </Link>
 
+            <Link to="calendar" >
+              Calendar
+            </Link>
+
         </nav>
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="custodialparentview" element={<CustodialParentView />} />
           <Route path="noncustodialparentview" element={<NonCustodialParentView />} />
+          <Route path="calendar" element={<Calendar />} />
 
         </Routes>
       </Router>
