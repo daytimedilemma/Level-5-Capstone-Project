@@ -9,19 +9,28 @@ function UseContextProvider(props) {
 
     const [custodialParentData, setCustodialParentData] = useState([])
     const [nonCustodialParentData, setNonCustodialParentData] = useState([])
+
+    // const [calendar, setCalendar] = useState([])
+
+    // const BASE_CALENDAR_URL = "https://www.googleapis.com/calendar/v3/calendars"
+    // const BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY = "holiday@group.v.calendar.google.com"
+    // const API_KEY = API_KEY
+    // const CALENDAR_REGION = "en.usa"
+
+    // function getCalendar() {
+    //     axios.get(`${BASE_CALENDAR_URL}/${CALENDAR_REGION}%23${BASE_CALENDAR_ID_FOR_PUBLIC_HOLIDAY}/events?key=${API_KEY}`)
+    //         .then(res => {
+    //             console.log(res.data)
+    //             setCalendar((prevCal => {
+    //             return [...prevCal, ...res.data.items]
+    //         }))}
+    //         )
+                
+    //         .catch(err => console.log(err))
+    // }
+
     const [summerList, setSummerList] = useState([])
     const[childAndSeasonList, setChildAndSeasonList] = useState([])
-    const [calendar, setCalendar] = useState([])
-
-    const API_KEY = `AIzaSyCSM5CLpacQnfpw0qJMxGigpjh5LE7rGuc`
-
-    function getCalendar() {
-        axios.get(`https://www.googleapis.com/calendar/v3/calendars/en.usa%23holiday@group.v.calendar.google.com/events?key=${API_KEY}`)
-            .then(res => {setCalendar(res.data)
-            console.log(res.data)}
-            )
-            .catch(err => console.log(err))
-    }
     
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
@@ -60,7 +69,7 @@ function UseContextProvider(props) {
     
     const custodialHolidays = [
         {
-            eventHolidays: {
+            evenHolidays: {
                 drMartinLutherKing: {
                     //Need to add arguement for Friday schedule
                     name: "Dr. Martin Luther King Jr. Day",
@@ -213,10 +222,15 @@ function UseContextProvider(props) {
             setNonCustodialParentData,
             addNonCustodialParentData,
             addCustodialParentData,
+
+            // getCalendar,
+            // calendar
+
             summerList,
             setSummerList,
             childAndSeasonList,
             setChildAndSeasonList
+
         }}>
             {props.children}
         </UseContext.Provider>
