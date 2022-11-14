@@ -6,7 +6,7 @@ import SubmitCustodialResults from "./components/SubmitCustodialResults.js"
 import NonCustodialParentView from "./components/NonCustodialParentView.js"
 import "./style.css"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Calendar from "./components/Calendar.js"
+//import Calendar from "./components/Calendar.js"
 
 function App() {
 
@@ -27,10 +27,6 @@ function App() {
               Custodial Parent
             </Link>
 
-            <Link to="calendar" >
-              Calendar
-            </Link>
-
         </nav>
 
         <Routes>
@@ -39,7 +35,6 @@ function App() {
           <Route path="custodialSummerInput" element={<CustodialSummerInput />} />
           <Route path="submitCustodialResults" element={<SubmitCustodialResults />} />
           <Route path="noncustodialparentview" element={<NonCustodialParentView />} />
-          <Route path="calendar" element={<Calendar />} />
 
         </Routes>
       </Router>

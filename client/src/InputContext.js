@@ -31,6 +31,23 @@ function UseContextProvider(props) {
 
     const [summerList, setSummerList] = useState([])
     const[childAndSeasonList, setChildAndSeasonList] = useState([])
+     const childAndSeasonInputInit = {
+        childName: "",
+        childBeginningSchoolTime: "08:00",
+        childEndingSchoolTime: "03:00",
+        childBirthday: "",
+        fallBreakStartDate: "",
+        fallBreakEndDate: "",
+        winterBreakFirstHalfStartDate: "",
+        winterBreakFirstHalfEndDate: "",
+        winterBreakSecondHalfStartDate: "",
+        winterBreakSecondHalfEndDate: "",
+        springBreakStartDate: "",
+        springBreakEndDate: ""
+    }
+
+    const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
+    
     
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
@@ -227,7 +244,9 @@ function UseContextProvider(props) {
 
             // getCalendar,
             // calendar
-
+            childAndSeasonInputInit,
+            childAndSeasonInput,
+            setChildAndSeasonInput,
             summerList,
             setSummerList,
             childAndSeasonList,
