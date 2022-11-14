@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-
+import { useNavigate } from "react-router-dom"
 import { UseContext } from "../InputContext"
 import SeasonalBreakInputs from "./seasonBreakInputs/SeasonalBreaksInput"
 
@@ -9,14 +9,18 @@ function CustodialParentView() {
         getParentData,
         setCustodialParentData,
         custodialParentData,
+        childAndSeasonList,
+        setChildAndSeasonList
     }
         = useContext(UseContext)
 
     useEffect(() => {
         getParentData("custodialParent", setCustodialParentData)
-        
+
     }, [])
-   
+
+    console.log(childAndSeasonList)
+
     const displayData = custodialParentData.map((data, index) => {
         const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = data
         return (
@@ -27,19 +31,35 @@ function CustodialParentView() {
             </div>
         )
     })
-    
+
+    const displayChildAndSeasonList = childAndSeasonList.map((entry, index) => {
+        const {childName} = entry
+        return (
+           <h4 key={index}>{childName}</h4>
+        )
+    })
+
+
+    const navigate = useNavigate()
+
     return (
         <>
             <h1 className="welcome">Custodial Parent</h1>
-                <SeasonalBreakInputs 
-                parent = "custodialParent"
-                data = {custodialParentData}
-                setData = {setCustodialParentData}
-                /> 
-            
+            <SeasonalBreakInputs
+                parent="custodialParent"
+                data={custodialParentData}
+                setData={setCustodialParentData}
+            />
+            {childAndSeasonList.length >= 1 ?
+                
+                { displayChildAndSeasonList }
+                :
+                <></>
+            }
+            <button onClick={() => navigate("/custodialSummerInput")}>Summer Date Inputs</button>
             <h3>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h3>
-        
             {displayData}
+           
         </>
     )
 }

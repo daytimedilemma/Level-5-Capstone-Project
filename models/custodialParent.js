@@ -12,13 +12,13 @@ const custodialHolidays = {
             endingDay: "Martin Luther King Day"
         },
 
-        springBreak: {
-            name: "Spring Break",
-            beginningTime: "6:00PM",
-            beginningDay: "Day school dismisses",//Retrieve Spring Break dates
-            endingTime: "7:00PM day before school begins ",
-            endingDay: "Day before school begins" //Retrieve Spring Break dates, user input
-        },
+        // springBreak: {
+        //     name: "Spring Break",
+        //     beginningTime: "6:00PM",
+        //     beginningDay: "Day school dismisses",//Retrieve Spring Break dates
+        //     endingTime: "7:00PM day before school begins ",
+        //     endingDay: "Day before school begins" //Retrieve Spring Break dates, user input
+        // },
 
         independenceDay: {
             name: "Independence Day",
@@ -36,13 +36,13 @@ const custodialHolidays = {
             endingDay: "Labor Day, day before school resumes"
         },
 
-        fallBreak: {
-            name: "Spring Break",
-            beginningTime: "6:00PM",
-            beginningDay: "Day school dismisses",//Retrieve Fall Break dates
-            endingTime: "7:00PM",
-            endingDay: "Day before school begins" //Retrieve Fall Break dates, user input
-        },
+        // fallBreak: {
+        //     name: "Spring Break",
+        //     beginningTime: "6:00PM",
+        //     beginningDay: "Day school dismisses",//Retrieve Fall Break dates
+        //     endingTime: "7:00PM",
+        //     endingDay: "Day before school begins" //Retrieve Fall Break dates, user input
+        // },
 
         veteransDay: {
             name: "Veterans Day",
