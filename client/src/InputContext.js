@@ -9,6 +9,7 @@ function UseContextProvider(props) {
 
     const [custodialParentData, setCustodialParentData] = useState([])
     const [nonCustodialParentData, setNonCustodialParentData] = useState([])
+
     // const [calendar, setCalendar] = useState([])
 
     // const BASE_CALENDAR_URL = "https://www.googleapis.com/calendar/v3/calendars"
@@ -27,6 +28,9 @@ function UseContextProvider(props) {
                 
     //         .catch(err => console.log(err))
     // }
+
+    const [summerList, setSummerList] = useState([])
+    const[childAndSeasonList, setChildAndSeasonList] = useState([])
     
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
@@ -218,8 +222,15 @@ function UseContextProvider(props) {
             setNonCustodialParentData,
             addNonCustodialParentData,
             addCustodialParentData,
+
             // getCalendar,
             // calendar
+
+            summerList,
+            setSummerList,
+            childAndSeasonList,
+            setChildAndSeasonList
+
         }}>
             {props.children}
         </UseContext.Provider>

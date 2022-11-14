@@ -2,9 +2,10 @@ import React, { useState } from "react"
 
 export default function SummerBreakInputs() {
     const [uninterruptedBreakInput, setUninterruptedBreakInput] = useState()
-    const [uninterruptedSummerBreakinit, setUninterruptedSummerBreakinit] = useState({
-        uninterruptedSummmerBreakStartDate: "",
-        uninterruptedSummmerBreakEndDate: "",
+    const [uninterruptedSummerBreakinit, setUninterruptedSummerBreakinit] = useState(
+    {
+        uninterruptedSummmerBreakStartDateOne: "",
+        uninterruptedSummmerBreakEndDateOne: "",
     })
 
     const input = (<label>
@@ -43,8 +44,7 @@ export default function SummerBreakInputs() {
     return (
         <>
             <div>
-                {inputCount.map((count, index) => <div key={index}>{count}</div>)}
-                <button onClick={addInput}>Add Summer Input</button>
+                
             </div>
         </>
     )
