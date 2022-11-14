@@ -19,6 +19,7 @@ function CustodialParentView() {
 
     }, [])
 
+    console.log(childAndSeasonList)
 
     const displayData = custodialParentData.map((data, index) => {
         const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = data
@@ -32,15 +33,9 @@ function CustodialParentView() {
     })
 
     const displayChildAndSeasonList = childAndSeasonList.map((entry, index) => {
-        const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday, winterBreakFirstHalfStartDate, winterBreakFirstHalfEndDate } = entry
+        const {childName} = entry
         return (
-            <div key={index}>
-                <h3>New Entry</h3>
-                <h4>{childName}</h4>
-                <p>DOB: {childBirthday}</p>
-                <p>{childName} is in school from {childBeginningSchoolTime}AM to {childEndingSchoolTime}PM</p>
-                <p>The first half of their Winter Break is {winterBreakFirstHalfStartDate} to {winterBreakFirstHalfEndDate}</p>
-            </div>
+           <h4 key={index}>{childName}</h4>
         )
     })
 
@@ -56,14 +51,15 @@ function CustodialParentView() {
                 setData={setCustodialParentData}
             />
             {childAndSeasonList.length >= 1 ?
+                
                 { displayChildAndSeasonList }
                 :
                 <></>
             }
-            <h3>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h3>
-
-            {displayData}
             <button onClick={() => navigate("/custodialSummerInput")}>Summer Date Inputs</button>
+            <h3>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h3>
+            {displayData}
+           
         </>
     )
 }

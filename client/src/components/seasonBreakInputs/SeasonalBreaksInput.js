@@ -24,7 +24,7 @@ export default function SeasonalBreakInputs(props) {
 
                         <label>
                             Fall Break:
->>>>>>>>> Temporary merge branch 2
+
                             <input
                                 type="date"
                                 name="fallBreakStartDate"
@@ -325,22 +325,22 @@ export default function SeasonalBreakInputs(props) {
     }
 
 
-    const childAndSeasonInputInit = {
-        childName: "",
-        childBeginningSchoolTime: "08:00",
-        childEndingSchoolTime: "03:00",
-        childBirthday: "",
-        fallBreakStartDate: "",
-        fallBreakEndDate: "",
-        winterBreakFirstHalfStartDate: "",
-        winterBreakFirstHalfEndDate: "",
-        winterBreakSecondHalfStartDate: "",
-        winterBreakSecondHalfEndDate: "",
-        springBreakStartDate: "",
-        springBreakEndDate: ""
-    }
+    // const childAndSeasonInputInit = {
+    //     childName: "",
+    //     childBeginningSchoolTime: "08:00",
+    //     childEndingSchoolTime: "03:00",
+    //     childBirthday: "",
+    //     fallBreakStartDate: "",
+    //     fallBreakEndDate: "",
+    //     winterBreakFirstHalfStartDate: "",
+    //     winterBreakFirstHalfEndDate: "",
+    //     winterBreakSecondHalfStartDate: "",
+    //     winterBreakSecondHalfEndDate: "",
+    //     springBreakStartDate: "",
+    //     springBreakEndDate: ""
+    // }
 
-    const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
+    // const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
     
 
     function handleSubmit(e) {
@@ -351,10 +351,10 @@ export default function SeasonalBreakInputs(props) {
         // } else if (props.parent === "nonCustodialParent") {
         //     addNonCustodialParentData(childAndSeasonInput)
         // }
-        setChildAndSeasonList(prevChildAndSeasonList=> [...prevChildAndSeasonList, childAndSeasonInput])
+        // setChildAndSeasonList(prevChildAndSeasonList=> [...prevChildAndSeasonList, childAndSeasonInput])
         setChildAndSeasonInput(childAndSeasonInputInit)
     }
-
+    console.log(childAndSeasonInput)
     function handleChange(e) {
         const { name, value } = e.target;
         setChildAndSeasonInput((prevChild) => {
@@ -363,7 +363,7 @@ export default function SeasonalBreakInputs(props) {
                 [name]: value
             };
         });
-<<<<<<<<< Temporary merge branch 1
+
       }
 
       
@@ -425,69 +425,9 @@ return (
         </form>
     </>
 )
-=========
+
     }
 
 
 
-    const displaySeasonalInputs = seasonalInputs()
-
-    return (
-        <>
-            <form onSubmit={handleSubmit} className="form">
-
-                <label>
-                    Child's Name:
-                    <input
-                        type="text"
-                        value={childAndSeasonInput.childName}
-                        name="childName"
-                        onChange={handleChange}
-                        placeholder="child's name"
-                    />
-                </label>
-
-                <label>
-                    School Start Time:
-                    <input
-                        type="time"
-                        value={childAndSeasonInput.childBeginningSchoolTime}
-                        name="childBeginningSchoolTime"
-                        max=""
-                        onChange={handleChange}
-                    />
-                </label>
-
-                <label>
-                    School End Time
-                    <input
-                        type="time"
-                        value={childAndSeasonInput.childEndingSchoolTime}
-                        name="childEndingSchoolTime"
-                        max=""
-                        onChange={handleChange}
-                    />
-                </label>
-
-                <label>
-                    Your Child's Birthday:
-                    <input
-                        type="date"
-                        name="childBirthday"
-                        value={childAndSeasonInput.childBirthday}
-                        onChange={handleChange} />
-                </label>
-                <NonCustodialWeekDayInput />
-                <h3>Seasonal Breaks for the School Year of {year} - {year + 1}</h3>
-                {displaySeasonalInputs}
-                <br />
-                {/* <SummerBreakInputs /> */}
-                <br />
-                <button>Submit Child Entry</button>
-            </form>
-        </>
-    )
->>>>>>>>> Temporary merge branch 2
-
-
-}
+    
