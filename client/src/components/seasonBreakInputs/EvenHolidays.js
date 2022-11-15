@@ -69,7 +69,7 @@ export default function EvenHolidays() {
     ]
     const displayEvenYears = evenYears.map(holiday => 
         <> 
-            <h3>{holiday.name}:</h3> 
+            <h3 className='holiday-name'>{holiday.name}:</h3> 
             <h4>{holiday.beginningTime} {holiday.beginningDay}</h4>
             <h4>{holiday.endingTime} {holiday.endingDay}</h4>
         </>

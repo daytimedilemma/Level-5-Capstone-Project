@@ -27,6 +27,10 @@ function App() {
               Custodial Parent
             </Link>
 
+            <Link to="submitcustodialresults" >
+              Submit Custodial Results
+            </Link>
+
         </nav>
 
         <Routes>

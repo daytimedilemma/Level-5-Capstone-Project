@@ -6,8 +6,8 @@ import OddHolidays from "./seasonBreakInputs/OddHolidays"
 export default function SubmitCustodialResults(){
     const {summerList, year} = useContext(UseContext)
 
-    const showEvenHolidays = EvenHolidays
-    console.log(showEvenHolidays)
+    // const showEvenHolidays = EvenHolidays
+    // console.log(showEvenHolidays)
     // const evenHolidays = {}
     // const oddHolidays = {}
     // const showEvenHolidays = {
@@ -29,7 +29,7 @@ export default function SubmitCustodialResults(){
     return (
         <>
             {displayList}
-            <h1>All holidays you have your child</h1>
+            <h1>All holidays you have your child:</h1>
             <ul>
                {year % 2 === 0 ? <EvenHolidays/>:
                <OddHolidays/>
