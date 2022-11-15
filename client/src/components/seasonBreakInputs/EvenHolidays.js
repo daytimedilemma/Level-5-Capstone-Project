@@ -36,7 +36,7 @@ export default function EvenHolidays() {
                     beginningTime: "6 PM",
                     beginningDay: "Friday before Labor Day",
                     endingTime: "7:00PM",
-                    endingDay: "Labor Day, day before school resumes"
+                    endingDay: "Labor Day"
                 },
                 {
                     name: "Spring Break",
@@ -62,15 +62,15 @@ export default function EvenHolidays() {
                 {
                     name: "Day before or after Child's Birthday",
                     beginningTime: "3:00PM",
-                    beginningDay: "day before or after Child's Birthday", //Child's Birthday input
+                    beginningDay: "day chosen", //Child's Birthday input
                     endingTime: "9:00PM ",
-                    endingDay: "day before or after Child's Birthday" //Child's Birthday input
+                    endingDay: "chosen day" //Child's Birthday input
                 }   
     ]
     const displayEvenYears = evenYears.map(holiday => 
         <> 
             <h3 className='holiday-name'>{holiday.name}:</h3> 
-            <h4>{holiday.beginningTime} {holiday.beginningDay}</h4>
+            <h4>{holiday.beginningTime} {holiday.beginningDay}, through</h4>
             <h4>{holiday.endingTime} {holiday.endingDay}</h4>
         </>
     )

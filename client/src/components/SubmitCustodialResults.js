@@ -29,7 +29,7 @@ export default function SubmitCustodialResults(){
     return (
         <>
             {displayList}
-            <h1>All holidays you have your child:</h1>
+            <h1>Holidays for the year:</h1>
             <ul>
                {year % 2 === 0 ? <EvenHolidays/>:
                <OddHolidays/>
