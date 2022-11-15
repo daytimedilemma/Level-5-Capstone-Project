@@ -31,3 +31,10 @@ h3 {
     padding-bottom: 25px;
 }
 
+h1 {
+    text-align: center;
+}
+
+.holiday-name {
+    font-style: italic;
+}
