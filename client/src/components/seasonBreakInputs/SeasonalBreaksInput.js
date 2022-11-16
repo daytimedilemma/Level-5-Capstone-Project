@@ -12,8 +12,10 @@ export default function SeasonalBreakInputs(props) {
         addCustodialParentData,
         setChildAndSeasonList,
         childAndSeasonInput,
+
         setChildAndSeasonInput,
         childAndSeasonInputInit
+
     } = useContext(UseContext)
 
     const navigate = useNavigate()

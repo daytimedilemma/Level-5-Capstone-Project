@@ -1,19 +1,22 @@
 import React, { useContext, useState } from "react"
 import { UseContext } from "../InputContext"
+import EvenHolidays from "./seasonBreakInputs/EvenHolidays"
+import OddHolidays from "./seasonBreakInputs/OddHolidays"
 
 export default function SubmitCustodialResults(){
     const {summerList, year} = useContext(UseContext)
 
+    // const showEvenHolidays = EvenHolidays
+    // console.log(showEvenHolidays)
     // const evenHolidays = {}
     // const oddHolidays = {}
-    // const showHolidays 
-    //  if(year % 2 === 0 {
-        
-    //     showHolidays = evenHolidays
-    //     return (
-    //         <></>
-    //     )
-    // })
+    // const showEvenHolidays = {
+    //     if(year % 2 === 0) {
+    //         //const showHolidays = EvenHolidays
+    //       }
+    // }
+     
+
     const displayList = summerList.map((item, index) => {
         return (
             <>
@@ -26,9 +29,11 @@ export default function SubmitCustodialResults(){
     return (
         <>
             {displayList}
-            <h1>All holidays you have your child</h1>
+            <h1>Holidays for the year:</h1>
             <ul>
-                
+               {year % 2 === 0 ? <EvenHolidays/>:
+               <OddHolidays/>
+               }
             </ul>
         </>
     )
