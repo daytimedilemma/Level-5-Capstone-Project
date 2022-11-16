@@ -33,9 +33,13 @@ function CustodialParentView() {
     })
 
     const displayChildAndSeasonList = childAndSeasonList.map((entry, index) => {
-        const {childName} = entry
+        const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = entry
         return (
-           <h4 key={index}>{childName}</h4>
+            <div key={index}>
+                <h4>{childName}</h4>
+                <p>DOB: {childBirthday}</p>
+                <p>{childName} is in school from {childBeginningSchoolTime}AM to {childEndingSchoolTime}PM</p>
+            </div>
         )
     })
 
@@ -51,15 +55,17 @@ function CustodialParentView() {
                 setData={setCustodialParentData}
             />
             {childAndSeasonList.length >= 1 ?
-                
-                { displayChildAndSeasonList }
+                <>
+                    <h3>Pending Child List</h3>
+                    {displayChildAndSeasonList}
+                </>
                 :
                 <></>
             }
             <button onClick={() => navigate("/custodialSummerInput")}>Summer Date Inputs</button>
             <h3>Your {custodialParentData.length > 1 ? "Children" : "Child"}</h3>
             {displayData}
-           
+
         </>
     )
 }
