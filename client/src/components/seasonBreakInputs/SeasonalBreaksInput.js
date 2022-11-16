@@ -10,7 +10,10 @@ export default function SeasonalBreakInputs(props) {
     const { year,
         addNonCustodialParentData,
         addCustodialParentData,
-        setChildAndSeasonList
+        setChildAndSeasonList,
+        childAndSeasonInput,
+        setChildAndSeasonInput,
+        childAndSeasonInputInit
     } = useContext(UseContext)
 
     const navigate = useNavigate()
@@ -341,7 +344,7 @@ export default function SeasonalBreakInputs(props) {
     // }
 
     // const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
-    
+
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -351,8 +354,8 @@ export default function SeasonalBreakInputs(props) {
         // } else if (props.parent === "nonCustodialParent") {
         //     addNonCustodialParentData(childAndSeasonInput)
         // }
-        // setChildAndSeasonList(prevChildAndSeasonList=> [...prevChildAndSeasonList, childAndSeasonInput])
         setChildAndSeasonInput(childAndSeasonInputInit)
+        setChildAndSeasonList(prevChildAndSeasonList=> [...prevChildAndSeasonList, childAndSeasonInput])
     }
     console.log(childAndSeasonInput)
     function handleChange(e) {
@@ -364,70 +367,69 @@ export default function SeasonalBreakInputs(props) {
             };
         });
 
-      }
-
-      
-
-const displaySeasonalInputs = seasonalInputs()
-
-return (
-    <>
-    <form onSubmit={handleSubmit} className="form">
-        
-        <label>
-            Child's Name:
-            <input
-                type="text"
-                value={childAndSeasonInput.childName}
-                name="childName"
-                onChange={handleChange}
-                placeholder="Child's Name"
-            />
-        </label>
-        
-        <label>
-            School Start Time:
-            <input
-                type="time"
-                value={childAndSeasonInput.childBeginningSchoolTime}
-                name="childBeginningSchoolTime"
-                max=""
-                onChange={handleChange}
-            />
-        </label>
-
-        <label>
-            School End Time:
-            <input
-                type="time"
-                value={childAndSeasonInput.childEndingSchoolTime}
-                name="childEndingSchoolTime"
-                max=""
-                onChange={handleChange}
-            />
-        </label>
-
-        <label>
-            Child's Birthday:
-            <input
-                type="date"
-                name="childBirthday"
-                value={childAndSeasonInput.childBirthday}
-                onChange={handleChange} />
-        </label>
-        <NonCustodialWeekDayInput />
-        <h3>Seasonal Breaks for the {year} - {year + 1} School Year</h3>
-        {displaySeasonalInputs}
-        <br/>
-        {/* <SummerBreakInputs /> */}
-        <br />
-        <button>Submit Child Entry</button>
-        </form>
-    </>
-)
-
     }
 
 
 
-    
+    const displaySeasonalInputs = seasonalInputs()
+
+    return (
+        <>
+            <form onSubmit={handleSubmit} className="form">
+
+                <label>
+                    Child's Name:
+                    <input
+                        type="text"
+                        value={childAndSeasonInput.childName}
+                        name="childName"
+                        onChange={handleChange}
+                        placeholder="Child's Name"
+                    />
+                </label>
+
+                <label>
+                    School Start Time:
+                    <input
+                        type="time"
+                        value={childAndSeasonInput.childBeginningSchoolTime}
+                        name="childBeginningSchoolTime"
+                        max=""
+                        onChange={handleChange}
+                    />
+                </label>
+
+                <label>
+                    School End Time:
+                    <input
+                        type="time"
+                        value={childAndSeasonInput.childEndingSchoolTime}
+                        name="childEndingSchoolTime"
+                        max=""
+                        onChange={handleChange}
+                    />
+                </label>
+
+                <label>
+                    Child's Birthday:
+                    <input
+                        type="date"
+                        name="childBirthday"
+                        value={childAndSeasonInput.childBirthday}
+                        onChange={handleChange} />
+                </label>
+                <NonCustodialWeekDayInput />
+                <h3>Seasonal Breaks for the {year} - {year + 1} School Year</h3>
+                {displaySeasonalInputs}
+                <br />
+                {/* <SummerBreakInputs /> */}
+                <br />
+                <button>Submit Child Entry</button>
+            </form>
+        </>
+    )
+
+}
+
+
+

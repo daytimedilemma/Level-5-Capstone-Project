@@ -25,13 +25,29 @@ function UseContextProvider(props) {
     //             return [...prevCal, ...res.data.items]
     //         }))}
     //         )
-                
+
     //         .catch(err => console.log(err))
     // }
 
+    const childAndSeasonInputInit = {
+        childName: "",
+        childBeginningSchoolTime: "08:00",
+        childEndingSchoolTime: "03:00",
+        childBirthday: "",
+        fallBreakStartDate: "",
+        fallBreakEndDate: "",
+        winterBreakFirstHalfStartDate: "",
+        winterBreakFirstHalfEndDate: "",
+        winterBreakSecondHalfStartDate: "",
+        winterBreakSecondHalfEndDate: "",
+        springBreakStartDate: "",
+        springBreakEndDate: ""
+    }
+
+    const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
     const [summerList, setSummerList] = useState([])
-    const[childAndSeasonList, setChildAndSeasonList] = useState([])
-    
+    const [childAndSeasonList, setChildAndSeasonList] = useState([])
+
     function getParentData(parentPath, setParentData) {
         axios.get(`/${parentPath}`)
             .then(res => {
@@ -44,23 +60,23 @@ function UseContextProvider(props) {
             .catch(err => console.log(err))
     }
 
-    
+
 
     //Post Request for a single input
     //***Take away one of the parent routes to just one???***
-     //Form Submission
+    //Form Submission
 
-     
 
-    function addNonCustodialParentData(newData){
+
+    function addNonCustodialParentData(newData) {
         axios.post(`/nonCustodial`, newData)
-        .then(res => {
-            setNonCustodialParentData(prevParentData => [...prevParentData, res.data])
-        })
-        .catch(err => console.log(err)) 
+            .then(res => {
+                setNonCustodialParentData(prevParentData => [...prevParentData, res.data])
+            })
+            .catch(err => console.log(err))
     }
-    
-    function addCustodialParentData(newData){
+
+    function addCustodialParentData(newData) {
         axios.post(`/custodialParent`, newData)
             .then(res => {
                 setCustodialParentData(prevParentData => [...prevParentData, res.data])
@@ -68,7 +84,7 @@ function UseContextProvider(props) {
             .catch(err => console.log(err))
     }
 
-    
+
     const custodialHolidays = [
         {
             evenHolidays: {
@@ -210,7 +226,7 @@ function UseContextProvider(props) {
 
     const date = new Date()
     const year = date.getFullYear()
-    
+
 
 
     return (
@@ -224,9 +240,11 @@ function UseContextProvider(props) {
             setNonCustodialParentData,
             addNonCustodialParentData,
             addCustodialParentData,
-
+            childAndSeasonInput,
+            setChildAndSeasonInput,
             // getCalendar,
             // calendar
+            childAndSeasonInputInit,
 
             summerList,
             setSummerList,
