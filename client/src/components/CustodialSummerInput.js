@@ -15,7 +15,7 @@ export default function CustodialSummerInput() {
         setChildAndSeasonList
     } = useContext(UseContext)
 
-
+    
 
     const summerInputInit =
     {
@@ -25,7 +25,16 @@ export default function CustodialSummerInput() {
 
     const [summerInput, setSummerInput] = useState(summerInputInit)
 
-   
+    const displayChildAndSeasonList = childAndSeasonList.map((entry, index) => {
+        const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = entry
+        return (
+            <div key={index}>
+                <h4>{childName}</h4>
+                <p>DOB: {childBirthday}</p>
+                <p>{childName} is in school from {childBeginningSchoolTime}AM to {childEndingSchoolTime}PM</p>
+            </div>
+        )
+    })
 
     function handleChange(e) {
         const { name, value } = e.target
@@ -56,7 +65,7 @@ export default function CustodialSummerInput() {
 
     return (
         <>
-            
+            {displayChildAndSeasonList}
             <form onSubmit={handleSummerSubmit}>
                 <label>
                     Summer Input

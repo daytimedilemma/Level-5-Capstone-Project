@@ -140,22 +140,10 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const custodialParentSchema = new Schema({
 
 
-    childName: {
-        type: String,
-        required: true
-    },
-    childBeginningSchoolTime: {
-        type: String,
-        required: true
-    },
-    childEndingSchoolTime: {
-        type: String,
-        required: true
-    },
-    childBirthday: {
-        type: String,
-        required: true
-    },
+    childName: String,
+    childBeginningSchoolTime: String,
+    childEndingSchoolTime: String,
+    childBirthday: String,
 
     nonCustodialWeekDayInput : {
         startTime: String,
@@ -173,7 +161,9 @@ const custodialParentSchema = new Schema({
     fallBreakEndDate: String,
     
     springBreakStartDate: String,
-    springBreakEndDate: String
+    springBreakEndDate: String,
+
+    summerList: Array
 })
 
 

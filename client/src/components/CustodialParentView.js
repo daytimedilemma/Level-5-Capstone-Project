@@ -19,7 +19,7 @@ function CustodialParentView() {
 
     }, [])
 
-    console.log(childAndSeasonList)
+   
 
     const displayData = custodialParentData.map((data, index) => {
         const { childName, childBeginningSchoolTime, childEndingSchoolTime, childBirthday } = data
