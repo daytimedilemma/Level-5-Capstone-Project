@@ -27,6 +27,7 @@ custodialParentRoute.get("/:dataId", (req, res, next) => {
 
 //Post one Custodial Parent Schema
 custodialParentRoute.post("/", (req, res, next) => {
+    console.log(req.body)
     const newCustodialParentInfo = new Custodial(req.body)
     newCustodialParentInfo.save((err, newData) => {
         if (err) {

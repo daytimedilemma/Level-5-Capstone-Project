@@ -39,7 +39,7 @@ export default function EvenHolidays() {
                     endingDay: "Labor Day"
                 },
                 {
-                    name: "Spring Break",
+                    name: "Fall Break",
                     beginningTime: "6:00PM",
                     beginningDay: "day school dismisses",
                     endingTime: "7:00PM",

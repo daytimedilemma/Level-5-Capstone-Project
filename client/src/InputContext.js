@@ -7,7 +7,7 @@ function UseContextProvider(props) {
 
     //Get All request for data
 
-    const [custodialParentData, setCustodialParentData] = useState([])
+    const [custodialParentData, setCustodialParentData] = useState([    ])
     const [nonCustodialParentData, setNonCustodialParentData] = useState([])
 
     // const [calendar, setCalendar] = useState([])
@@ -29,22 +29,9 @@ function UseContextProvider(props) {
     //         .catch(err => console.log(err))
     // }
 
-    const childAndSeasonInputInit = {
-        childName: "",
-        childBeginningSchoolTime: "08:00",
-        childEndingSchoolTime: "03:00",
-        childBirthday: "",
-        fallBreakStartDate: "",
-        fallBreakEndDate: "",
-        winterBreakFirstHalfStartDate: "",
-        winterBreakFirstHalfEndDate: "",
-        winterBreakSecondHalfStartDate: "",
-        winterBreakSecondHalfEndDate: "",
-        springBreakStartDate: "",
-        springBreakEndDate: ""
-    }
+    
 
-    const [childAndSeasonInput, setChildAndSeasonInput] = useState(childAndSeasonInputInit)
+   
     const [summerList, setSummerList] = useState([])
 
     const[childAndSeasonList, setChildAndSeasonList] = useState([])
@@ -88,17 +75,20 @@ function UseContextProvider(props) {
 
     function addNonCustodialParentData(newData) {
         axios.post(`/nonCustodial`, newData)
-            .then(res => {
-                setNonCustodialParentData(prevParentData => [...prevParentData, res.data])
-            })
+            // .then(res => {
+            //     setNonCustodialParentData(prevParentData => [...prevParentData, res.data])
+            // })
+            .then(res => console.log(res))
             .catch(err => console.log(err))
     }
 
     function addCustodialParentData(newData) {
         axios.post(`/custodialParent`, newData)
             .then(res => {
+                console.log(res)
                 setCustodialParentData(prevParentData => [...prevParentData, res.data])
             })
+            
             .catch(err => console.log(err))
     }
 
